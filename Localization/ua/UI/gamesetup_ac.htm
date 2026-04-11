@@ -1,0 +1,696 @@
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+<head>
+<style>
+div
+{
+//border:1px solid red;
+font-size: 13px;
+}
+
+.tabs 
+{
+    behavior: tabs;
+    height: 100%%;
+    width: 100%%;
+    overflow: hidden;
+}
+
+.tabs > .strip /* tab strip */
+{
+    margin:0px;
+    padding:0px;
+    flow:vertical;
+}
+
+.tabs > .strip > [panel] /* all tabs, passive by default */
+{
+	width:100px;
+	height:29px;	
+    padding: 0px 15px 0px 15px;
+    margin: 0px;
+    background-repeat: stretch;
+    font-family: Georgia;
+    font-size: 15px;
+    font-weight: bold;
+    color: #E4DDDB;
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+.tabs > .strip > [panel]:current
+{
+	color: #FFFFFF;
+}
+
+.tabs  > .strip > [panel]#Campaign
+{
+	background-image:url(gamesetup/tab_left_default.png);
+}
+
+.tabs  > .strip > [panel]#Campaign:current
+{
+	background-image:url(gamesetup/tab_left_highlighted.png);
+}
+
+.tabs  > .strip > [panel]#Scenario
+{
+	background-image:url(gamesetup/tab_right_default.png);
+}
+
+.tabs  > .strip > [panel]#Scenario:current
+{
+	background-image:url(gamesetup/tab_right_highlighted.png);
+}
+
+.tabs > [name]
+{
+    display: none;
+}
+
+.tabs > [name]:expanded 
+{ 
+    background-image: none;
+    padding: 0px;
+    margin: 0px;
+    display: block; 
+    height: 100%%;
+    width: 100%%;
+    overflow: hidden;
+}
+
+button
+{
+	cursor: default;
+	transition: none;
+}
+
+button#BorderRaids
+{
+	width: 271px;
+	height: 210px;
+	background-image:url(gamesetup/ac_0_default.png);
+	position: relative;
+	left: -116px;
+	top: 2px;
+}
+
+button#Crete
+{
+	width: 275px;
+	height: 199px;
+	background-image:url(gamesetup/ac_1_default.png);
+	position: relative;
+	left: 118px;
+	top: 2px;
+}
+
+button#Torch
+{
+	width: 265px;
+	height: 211px;
+	background-image:url(gamesetup/ac_2_default.png);
+	position: relative;
+	left: 149px;
+	top: -95px;
+}
+
+button#Sicily
+{
+	width: 271px;
+	height: 223px;
+	background-image:url(gamesetup/ac_3_default.png);
+	position: relative;
+	left: -415px;
+	top: -6px;
+}
+
+button#D-Day
+{
+	width: 275px;
+	height: 234px;
+	background-image:url(gamesetup/ac_4_default.png);
+	position: relative;
+	left: 268px;
+	top: -248px;
+}
+
+button#BorderRaids:active,
+button#BorderRaids:active:hover,
+button#BorderRaids:checked,
+button#BorderRaids:checked:hover
+{
+	background-image:url(gamesetup/ac_0_selected.png);
+}
+
+button#Crete:active,
+button#Crete:active:hover,
+button#Crete:checked,
+button#Crete:checked:hover
+{
+	background-image:url(gamesetup/ac_1_selected.png);
+}
+
+button#Torch:active,
+button#Torch:active:hover,
+button#Torch:checked,
+button#Torch:checked:hover
+{
+	background-image:url(gamesetup/ac_2_selected.png);
+}
+
+button#Sicily:active,
+button#Sicily:active:hover,
+button#Sicily:checked,
+button#Sicily:checked:hover
+{
+	background-image:url(gamesetup/ac_3_selected.png);
+}
+
+button#D-Day:active,
+button#D-Day:active:hover,
+button#D-Day:checked,
+button#D-Day:checked:hover
+{
+	background-image:url(gamesetup/ac_4_selected.png);
+}
+
+button#BorderRaids:hover
+{
+	background-image:url(gamesetup/ac_0_highlighted.png);
+}
+
+button#Crete:hover
+{
+	background-image:url(gamesetup/ac_1_highlighted.png);
+}
+
+button#Torch:hover
+{
+	background-image:url(gamesetup/ac_2_highlighted.png);
+}
+
+button#Sicily:hover
+{
+	background-image:url(gamesetup/ac_3_highlighted.png);
+}
+
+button#D-Day:hover
+{
+	background-image:url(gamesetup/ac_4_highlighted.png);
+}
+
+.pushbtn
+{
+	width: 154px;
+	height: 50px;
+	background-image: url(purchase/panzer_horizont_button01.png);
+	background-repeat: no-repeat;
+	text-align: center;
+	vertical-align: middle;
+	color: #f9f5c8;
+	font-weight: bold;
+	padding: 0px;
+	font-size:13px;
+}
+
+.pushbtn:active
+{
+	background-image: url(purchase/panzer_horizont_button01_act.png);
+}
+
+.pushbtn:disabled
+{
+	color: #95907c
+}
+
+.expa
+{
+	width: 110px;
+	height: 145px;
+	margin: 0;
+	border: 0;
+	padding: 0;
+	background-position: center center;
+	background-repeat: no-repeat;
+	font-family: Arial;
+	font-size:12px;
+}
+
+.expa#Tutorial
+{
+	background-image: url(gamesetup/campaigns_tutorial.png);
+}
+
+.expa#Tutorial:active,
+.expa#Tutorial:active:hover,
+.expa#Tutorial:checked,
+.expa#Tutorial:checked:hover
+{
+	background-image:url(gamesetup/campaigns_tutorial_selected.png);
+}
+
+.expa#Tutorial:hover
+{
+	background-image:url(gamesetup/campaigns_tutorial_high.png);
+}
+
+.expa#ExpansionWehrmacht
+{
+	background-image: url(gamesetup/campaigns_wehrmacht.png);
+}
+
+.expa#ExpansionWehrmacht:active,
+.expa#ExpansionWehrmacht:active:hover,
+.expa#ExpansionWehrmacht:checked,
+.expa#ExpansionWehrmacht:checked:hover
+{
+	background-image:url(gamesetup/campaigns_wehrmacht_selected.png);
+}
+
+.expa#ExpansionWehrmacht:hover
+{
+	background-image:url(gamesetup/campaigns_wehrmacht_high.png);
+}
+
+.expa#ExpansionWehrmachtPurchase
+{
+	background-image: url(gamesetup/campaigns_wehrmacht_locked.png);
+}
+
+.expa#ExpansionWehrmachtPurchase:active,
+.expa#ExpansionWehrmachtPurchase:active:hover,
+.expa#ExpansionWehrmachtPurchase:checked,
+.expa#ExpansionWehrmachtPurchase:checked:hover
+{
+	background-image:url(gamesetup/campaigns_wehrmacht_selected.png);
+}
+
+.expa#ExpansionAfrika
+{
+	background-image: url(gamesetup/campaigns_africa.png);
+}
+
+.expa#ExpansionAfrika:active,
+.expa#ExpansionAfrika:active:hover,
+.expa#ExpansionAfrika:checked,
+.expa#ExpansionAfrika:checked:hover
+{
+	background-image:url(gamesetup/campaigns_africa_selected.png);
+}
+
+.expa#ExpansionAfrika:hover
+{
+	background-image:url(gamesetup/campaigns_africa_high.png);
+}
+
+
+.expa#ExpansionAfrikaPurchase
+{
+	background-image: url(gamesetup/campaigns_africa_locked.png);
+}
+
+.expa#ExpansionAfrikaPurchase:active,
+.expa#ExpansionAfrikaPurchase:active:hover,
+.expa#ExpansionAfrikaPurchase:checked,
+.expa#ExpansionAfrikaPurchase:checked:hover
+{
+	background-image:url(gamesetup/campaigns_africa_selected.png);
+}
+
+.expa#ExpansionAllies
+{
+	background-image: url(gamesetup/campaigns_allies.png);
+}
+
+.expa#ExpansionAllies:active,
+.expa#ExpansionAllies:active:hover,
+.expa#ExpansionAllies:checked,
+.expa#ExpansionAllies:checked:hover
+{
+	background-image:url(gamesetup/campaigns_allies_selected.png);
+}
+
+.expa#ExpansionAllies:hover
+{
+	background-image:url(gamesetup/campaigns_allies_high.png);
+}
+
+.expa#ExpansionAlliesPurchase
+{
+	background-image: url(gamesetup/campaigns_allies_locked.png);
+}
+
+.expa#ExpansionAlliesPurchase:active,
+.expa#ExpansionAlliesPurchase:active:hover,
+.expa#ExpansionAlliesPurchase:checked,
+.expa#ExpansionAlliesPurchase:checked:hover
+{
+	background-image:url(gamesetup/campaigns_allies_selected.png);
+}
+
+.expa#ExpansionSoviet
+{
+	background-image: url(gamesetup/campaigns_soviet.png);
+}
+
+.expa#ExpansionSoviet:active,
+.expa#ExpansionSoviet:active:hover,
+.expa#ExpansionSoviet:checked,
+.expa#ExpansionSoviet:checked:hover
+{
+	background-image:url(gamesetup/campaigns_soviet_selected.png);
+}
+
+.expa#ExpansionSoviet:hover
+{
+	background-image:url(gamesetup/campaigns_soviet_high.png);
+}
+
+
+.expa#ExpansionSovietPurchase
+{
+	background-image: url(gamesetup/campaigns_soviet_locked.png);
+}
+
+.expa#ExpansionSovietPurchase:active,
+.expa#ExpansionSovietPurchase:active:hover,
+.expa#ExpansionSovietPurchase:checked,
+.expa#ExpansionSovietPurchase:checked:hover
+{
+	background-image:url(gamesetup/campaigns_soviet_selected.png);
+}
+
+.expa#More
+{
+	background-image: url(gamesetup/campaigns_other.png);
+}
+
+.expa#More:active,
+.expa#More:active:hover,
+.expa#More:checked,
+.expa#More:checked:hover
+{
+	background-image:url(gamesetup/campaigns_other_selected.png);
+}
+
+.expa#More:hover
+{
+	background-image:url(gamesetup/campaigns_other_high.png);
+}
+
+.gotlisch
+{
+	font-family: Arial;
+	font-size: 30px;
+}
+
+widget[type="select"]
+{
+	width: 100%%;
+	height: 100%%;
+	background-image:url(gamesetup/listbox.png);
+	background-repeat: expand;
+	background-position: 39px 0px 46px 0px;
+	padding: 15px 17px 19px 15px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	flow: h-flow;
+	vertical-scrollbar: my-v-scrollbar;
+}
+
+widget[type="select"] option
+{
+	font-size: 15px;
+	width: 140px;
+	background-image: none;
+	background-color: transparent;
+	color: #000000;
+}
+
+widget[type="select"] option.wide
+{
+	width: 210px;
+}
+
+widget[type="select"] option:active,
+widget[type="select"] option:checked
+{
+	font-weight: bold;
+	background-image: none;
+	background-color: transparent;
+	color: #000000;
+}
+
+@set my-v-scrollbar
+{
+  .prev 
+  { 
+    foreground-image:url(gamesetup/up_default.png); 
+    foreground-position:50% 50%;
+    foreground-repeat:no-repeat; 
+  }
+  
+  .next 
+  { 
+    foreground-image:url(gamesetup/down_default.png); 
+    foreground-position:50% 50%;
+    foreground-repeat:no-repeat; 
+  }
+  
+  .next-page, 
+  .prev-page
+  {
+  	foreground-image:none; 
+  }
+  
+  .slider 
+  { 
+    foreground-image:url(gamesetup/slider_default.png);
+    foreground-position: 5px 0px 5px 0px;
+    foreground-repeat:expand;
+    margin:0px;
+    padding:0px;
+  }
+
+  .slider:hover
+  {
+    foreground-image:url(gamesetup/slider_highlighted.png);
+  }
+
+  .slider:active
+  { 
+    foreground-image:url(gamesetup/slider_selected.png);
+  }
+  
+  .next:disabled, .slider:disabled, 
+  .prev:disabled  { height:0; border:none; foreground-image:none; }
+  
+  .base:disabled
+  {
+    background-image: none;
+    background-repeat: no-repeat;
+    width: 0;
+  }
+    
+  .prev:hover
+  { 
+    foreground-image:url(gamesetup/up_highlighted.png); 
+  }
+  
+  .next:hover
+  { 
+    foreground-image:url(gamesetup/down_highlighted.png); 
+  }
+  
+  .prev:active
+  { 
+    foreground-image:url(gamesetup/up_selected.png); 
+  }
+  
+  .next:active
+  { 
+    foreground-image:url(gamesetup/down_selected.png); 
+  }
+  
+  .base { width: 18px; } /* explicit declaration of its width */
+  
+}
+
+div
+{
+//border:1px solid red
+}
+</style>
+</head>
+
+<body style="margin:0px; background-image:url(gamesetup/campaign_background.png); background-repeat: stretch; overflow-x: hidden; overflow-y: hidden">
+
+<div style="height:50%%" />
+
+<div style="height:740px; width:1110px; margin:auto; flow:h-flow">
+
+<div style="height:435px; width:110px; position:relative; left:30px; top:160px">
+<button.expa id="Tutorial" tooltip="IDS_TT_CAMPAIGN_TUTORIAL" />
+<button.expa type="radio" name="Expansion" id="ExpansionWehrmacht" tooltip="IDS_TT_CAMPAIGN_WEHRMACHT" />
+<button.expa type="radio" name="Expansion" id="ExpansionAfrika" tooltip="IDS_TT_CAMPAIGN_AFRIKA" />
+</div>
+
+<div style="height:740px; width:890px; background-image:url(gamesetup/campaign_menu.png); margin: auto">
+
+<div.tabs>
+
+<div.strip style="height:160px; width:100%%">
+
+<div panel="panel-campaign" id="Campaign" style="position:relative; left:96px; top:128px" selected>
+IDS_TAB_CAMPAIGN
+</div>
+
+<div panel="panel-scenario" id="Scenario" style="position:relative; left:691px; top:90px">
+IDS_TAB_SCENARIO
+</div>
+
+</div>
+
+<div name="panel-campaign" style="height:100%%; width:100%%; text-align: center;">
+
+<div style="height:440px; width:100%%; overflow: hidden">
+
+<button type="radio" name="CamEntryPoint" id="BorderRaids" checked />
+
+<button type="radio" name="CamEntryPoint" id="Crete" />
+
+<button type="radio" name="CamEntryPoint" id="Torch" />
+
+<button type="radio" name="CamEntryPoint" id="Sicily" />
+
+<button type="radio" name="CamEntryPoint" id="D-Day" />
+
+
+<!--
+<div style="height:50%%" />
+
+<button type="radio" name="CamEntryPoint" id="BorderRaids" style="font-size:30px" checked>Desert 1940 (Tutorial)</button><br/>
+<button type="radio" name="CamEntryPoint" id="Crete" style="font-size:30px">Crete 1941</button><br/>
+<button type="radio" name="CamEntryPoint" id="SecondAlamein" style="font-size:30px">El Alamein 1942</button><br/>
+<button type="radio" name="CamEntryPoint" id="Torch" style="font-size:30px">Torch 1942</button><br/>
+<button type="radio" name="CamEntryPoint" id="Sicily" style="font-size:30px">Sicily 1943</button><br/>
+<button type="radio" name="CamEntryPoint" id="D-Day" style="font-size:30px">Normandy 1944</button><br/>
+-->
+
+</div>
+
+<div style="height:100%%; width:100%%; overflow: hidden; padding-left: 40px; padding-right: 60px">
+<table style="width:100%%" cellspacing=0 cellpadding=0>
+<tr>
+<td style="width:min-intrinsic; vertical-align: top">
+<button.pushbtn id="cmd_cancel" style="margin-top:11px">IDS_BUTTON_BACK_TO_MENU</button>
+</td>
+<td style="width:100%%; text-align:center; ">
+<div.gotlisch id="CamName" style="color:#fcf2b5; font-size:30px">&nbsp;</div>
+<div id="CamDescription" style="color:#ffffff">&nbsp;</div>
+</td>
+<td style="width:min-intrinsic; vertical-align: top">
+<button.pushbtn id="cmd_ok" style="margin-top:11px">IDS_BUTTON_PLAY</button>
+</td>
+</tr>
+</table>
+</div>
+
+</div>
+
+<div name="panel-scenario" style="height:100%%; width:100%%; text-align: center; overflow: auto">
+
+<div id="ScnImage" style="height:434px; width:778px; background-image:none; position:relative; top:-2px; left:56px">
+
+<div style="position:relative; left:140px; top:362px; width:490px; height:55px; text-align:left; padding:5px">
+<div id="ScnName" style="font-weight:bold"></div>
+<div id="ScnDescription"></div>
+</div>
+
+</div>
+
+<div style="height:100%%; width:100%%; overflow: hidden; padding-left: 40px; padding-right: 60px; position:relative; top:-10px">
+<table style="width:100%%; height:100%%" cellspacing=0 cellpadding=0>
+<tr>
+<td style="width:min-intrinsic; vertical-align:top; padding-top:27px">
+<button.pushbtn id="cmd_cancel">IDS_BUTTON_BACK_TO_MENU</button>
+</td>
+<td style="width:100%%">
+<widget type="select" id="ScnList">
+
+<div id="MultiplayerScenarios" style="flow:h-flow; display:none">
+
+<div style="width:400px; color:#DED6CD; background-color:#544338; font-weight:bold">IDS_HEADER_MP_SCENARIOS</div>
+
+<option.wide value="Temporal Advance.pzscn">IDS_TEMPORAL_ADVANCE</option>
+<option.wide value="Fortress Helm.pzscn">IDS_FORTRESS_HELM</option>
+<option.wide value="Battle of Britain.pzscn">IDS_BATTLE_OF_BRITAIN</option>
+<option.wide value="Frozen Spring.pzscn">IDS_FROZEN_SPRING</option>
+<option.wide value="Red Alert.pzscn">IDS_RED_ALERT</option>
+<option.wide value="River Rapid.pzscn">IDS_RIVER_RAPID</option>
+<option.wide value="Sonnenblume 43.pzscn">IDS_SONNENBLUME_43</option>
+<option.wide value="The Void.pzscn">IDS_THE_VOID</option>
+
+<div style="width:400px; color:#DED6CD; background-color:#544338; font-weight:bold">IDS_HEADER_SP_SCENARIOS</div>
+</div>
+
+<option.wide value="Advance to Elbe.pzscn" selected> IDS_ADVANCE_TO_ELBE </option>
+<option.wide value="Allied Disputes.pzscn"> IDS_ALLIED_DISPUTES </option>
+<option.wide value="Anzio Landing.pzscn">IDS_ANZIO_LANDING</option>
+<option.wide value="Bardia.pzscn"> IDS_BARDIA </option>
+<option.wide value="Battle of Girba.pzscn"> IDS_BATTLE_OF_GIRBA </option>
+<option.wide value="Battle of the Bulge.pzscn"> IDS_BATTLE_OF_THE_BULGE </option>
+<option.wide value="Beda Fomm.pzscn"> IDS_BEDA_FOMM </option>
+<option.wide value="Berlin West.pzscn"> IDS_BERLIN_WEST </option>
+<option.wide value="Border Raids.pzscn"> IDS_BORDER_RAIDS </option>
+<option.wide value="Cassino Breakthrough.pzscn"> IDS_CASSINO_BREAKTHROUGH </option>
+<option.wide value="Cauldron.pzscn"> IDS_CAULDRON </option>
+<option.wide value="Cobra.pzscn"> IDS_COBRA</option>
+<option.wide value="Crete.pzscn"> IDS_CRETE</option>
+<option.wide value="Crossing the Rhine.pzscn"> IDS_CROSSING_THE_RHINE </option>
+<option.wide value="Crusader.pzscn"> IDS_CRUSADER</option>
+<option.wide value="D-Day.pzscn"> IDS_D_DAY </option>
+<option.wide value="First Alamein.pzscn"> IDS_FIRST_ALAMEIN </option>
+<option.wide value="Fort Capuzzo.pzscn"> IDS_FORT_CAPUZZO </option>
+<option.wide value="Italian Offensive.pzscn"> IDS_ITALIAN_OFFENSIVE </option>
+<option.wide value="Kasserine.pzscn"> IDS_KASSERINE</option>
+<option.wide value="Market Garden.pzscn"> IDS_MARKET_GARDEN </option>
+<option.wide value="Medenine.pzscn"> IDS_MEDENINE </option>
+<option.wide value="Salerno.pzscn"> IDS_SALERNO </option>
+<option.wide value="Second Alamein.pzscn"> IDS_SECOND_ALAMEIN </option>
+<option.wide value="Sicily.pzscn"> IDS_SICILY</option>
+<option.wide value="Sidi Barrani.pzscn"> IDS_SIDI_BARRANI </option>
+<option.wide value="Taranto Raid.pzscn"> IDS_TARANTO_RAID </option>
+<option.wide value="Torch.pzscn"> IDS_TORCH</option>
+<option.wide value="Tunisia.pzscn"> IDS_TUNISIA</option>
+<option.wide value="V sites.pzscn"> IDS_V_SITES </option>
+<option.wide value="Custom">IDS_SCEN_CUSTOM</option>
+
+</widget>
+</td>
+<td style="width:min-intrinsic; vertical-align:top; padding-top:27px">
+<button.pushbtn id="cmd_ok">IDS_BUTTON_PLAY</button>
+</td>
+</tr>
+</table>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div style="height:435px; width:110px; position:relative; left:-47px; top:160px">
+<button.expa type="radio" name="Expansion" id="ExpansionAllies" tooltip="IDS_TT_CAMPAIGN_ALLIES" checked />
+<button.expa type="radio" name="Expansion" id="ExpansionSoviet" tooltip="IDS_TT_CAMPAIGN_SOVIET" />
+<button.expa id="More" tooltip="IDS_TT_CAMPAIGN_MORE" />
+</div>
+
+</div>
+
+</body>
+
+</html>

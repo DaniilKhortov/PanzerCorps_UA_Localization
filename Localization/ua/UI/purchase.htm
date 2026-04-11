@@ -1,0 +1,451 @@
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link rel="stylesheet" type="text/css" href="panzercorps.css">
+
+<head>
+
+<style>
+div
+{
+//border:1px solid red;
+}
+.flag[type="radio"],
+.flag[type="radio"]:hover
+{
+	background-image:url(purchase/purchase_tab_inact.png);
+	background-repeat:no-repeat;
+	width:29px;
+	height:29px;
+	padding:0px;
+	padding-left:3px;
+	padding-top:5px;
+	border:0px;
+	margin:0px;
+	overflow:hidden;
+	cursor:default;
+	vertical-align: top;
+	foreground-repeat: no-repeat;
+	foreground-position: center center;
+}
+
+.flag[type="radio"]:active,
+.flag[type="radio"]:checked,
+.flag[type="radio"]:active:hover,
+.flag[type="radio"]:checked:hover
+{
+	background-image:url(purchase/purchase_tab_act.png);
+}
+
+.flag img
+{
+	margin:auto;
+	padding:0;
+}
+
+.flag *
+{
+	vertical-align: top;
+}
+
+.cls[type="radio"],
+.cls[type="radio"]:hover
+{
+	background-image:url(purchase/purchase_butons_normal.png);
+	background-repeat:no-repeat;
+	background-position: left center;
+	height:33px;
+	padding:0px;
+	padding-left:38px;
+	padding-left:0px;
+	border:0px;
+	text-align: left;
+	vertical-align: middle;
+	color: #afa37d;
+	display: block;
+	font-weight: bold;
+	font-size: 13px;
+	cursor:default;
+}
+
+.cls *
+{
+	vertical-align: middle;
+}
+
+.cls[type="radio"]:active,
+.cls[type="radio"]:checked,
+.cls[type="radio"]:active:checked
+{
+	background-image:url(purchase/purchase_butons_act.png);
+	color: #efe0b7;
+}
+
+.cls[type="radio"]:disabled
+{
+	foreground-image:url(purchase/purchase_butons_inact.png);
+	foreground-repeat:no-repeat;
+	foreground-position: left center;
+	color: #95907c;
+}
+
+.pushbtn
+{
+	width: 154px;
+	height: 50px;
+	background-image: url(purchase/panzer_horizont_button01.png);
+	background-repeat: no-repeat;
+	text-align: center;
+	vertical-align: middle;
+	color: #f9f5c8;
+	font-weight: bold;
+	padding: 0px;
+	font-size:13px;
+}
+
+.pushbtn:active
+{
+	background-image: url(purchase/panzer_horizont_button01_act.png);
+}
+
+.pushbtn:disabled
+{
+	color: #95907c
+}
+
+td.staticon
+{
+	width:30px;
+	height:30px;
+	text-align: center;
+	vertical-align: middle;
+//	border: 1px solid red;
+}
+
+td.staticon > img
+{
+	width:30px;
+	height:30px;
+}
+
+td.statvalue
+{
+	height:30px;
+	width: 40px;
+	text-align: center;
+	vertical-align: middle;
+	overflow: hidden;
+	font-weight: bold;
+//	border: 1px solid red;
+}
+
+td.statvalue div
+{
+//	border: 1px solid blue;
+	height: 30px;
+	vertical-align: middle;
+	width: min-intrinsic;
+}
+
+td.sel
+{
+	height:20px;
+	font-size:16px;
+}
+td.hover
+{
+	height:10px;
+	font-size:10px;
+}
+</style>
+
+</head>
+
+<body style="background-image:url(purchase/purchase_bg.png); background-repeat: stretch; padding-top:24px">
+
+<div style="background-image:url(purchase/purchase_box1_head.png); background-repeat:no-repeat; position:absolute; top:5px; width:193px; height:161px">
+    
+<div style="position:absolute; left:16px; top:30px; width:160px; height:40px; text-align:center; vertical-align:middle; color:#353630; font-size:20px; font-family: Arial Narrow">
+<span id="Header">IDS_BUTTON_PURCHASE</span>
+</div>
+
+<div style="position:absolute; left:26px; top:94px; height:25px; text-align:left; vertical-align:middle; color:#c5bf9d; font-size:12px; font-weight:bold">
+IDS_LABEL_PRESTIGE
+</div>
+
+<div style="position:absolute; left:61px; top:94px; height:25px; width: 64px; text-align:center; vertical-align:middle; color:#fdda76; font-size:12px; font-weight:bold">
+<span id="Credit10000" style="color:#E3DE8C">0</span>
+</div>
+
+<div style="position:absolute; left:73px; top:94px; height:25px; width: 64px; text-align:center; vertical-align:middle; color:#fdda76; font-size:12px; font-weight:bold">
+<span id="Credit1000" style="color:#E3DE8C">0</span>
+</div>
+
+<div style="position:absolute; left:85px; top:94px; height:25px; width: 64px; text-align:center; vertical-align:middle; color:#fdda76; font-size:12px; font-weight:bold">
+<span id="Credit100" style="color:#E3DE8C">0</span>
+</div>
+
+<div style="position:absolute; left:97px; top:94px; height:25px; width: 64px; text-align:center; vertical-align:middle; color:#fdda76; font-size:12px; font-weight:bold">
+<span id="Credit10" style="color:#E3DE8C">0</span>
+</div>
+
+<div style="position:absolute; left:109px; top:94px; height:25px; width: 64px; text-align:center; vertical-align:middle; color:#fdda76; font-size:12px; font-weight:bold">
+<span id="Credit1" style="color:#E3DE8C">0</span>
+</div>
+
+<div style="position:absolute; left:26px; top:123px; height:25px; text-align:left; vertical-align:middle; color:#c5bf9d; font-size:12px; font-weight:bold">
+IDS_LABEL_CORE_UNITS
+</div>
+
+<div style="position:absolute; left:117px; top:123px; height:25px; width: 25px; text-align:center; vertical-align:middle; color:#fdda76; font-size:12px; font-weight:bold">
+<span id="CoreUnits10" style="color:#E3DE8C">0</span>
+</div>
+
+<div style="position:absolute; left:129px; top:123px; height:25px; width: 25px; text-align:center; vertical-align:middle; color:#fdda76; font-size:12px; font-weight:bold">
+<span id="CoreUnits1" style="color:#E3DE8C">0</span>
+</div>
+
+</div>
+
+<div style="flow:grid; height:100%%; overflow:hidden">
+
+<div style="left:1#; top:1#; width:193px; height:100%; background-image:url(purchase/purchase_box2.png); background-repeat:expand stretch-middle; background-position: 20px 20px 20px 20px; margin-right:13px">
+
+<div id="FlagList" style="position:absolute; left:15px; top:160px; height:31px; width: 160px; text-align: left; vertical-align: top; overflow:hidden">
+<button.flag name="flag" type="radio" id="flag0"></button><button.flag name="flag" type="radio" id="flag1"></button><button.flag name="flag" type="radio" id="flag2"></button><button.flag name="flag" type="radio" id="flag3"></button><button.flag name="flag" type="radio" id="flag4"></button>
+</div>
+
+<div id="ClassList" style="position:absolute; left:15px; top:205px; height:min-intrinsic; width: 160px; overflow:hidden">
+<button.cls name="unitclass" type="radio" id="unitclass0"><img src="purchase/classes/0.png" />&nbsp;IDS_CLASS_LONG_INFANTRY</button>
+<div style="height:5px" />
+<button.cls name="unitclass" type="radio" id="unitclass1"><img src="purchase/classes/1.png" />&nbsp;IDS_CLASS_LONG_TANK</button>
+<div style="height:5px" />
+<button.cls name="unitclass" type="radio" id="unitclass2"><img src="purchase/classes/2.png" />&nbsp;IDS_CLASS_LONG_RECON</button>
+<div style="height:5px" />
+<button.cls name="unitclass" type="radio" id="unitclass3"><img src="purchase/classes/3.png" />&nbsp;IDS_CLASS_LONG_AT</button>
+<div style="height:5px" />
+<button.cls name="unitclass" type="radio" id="unitclass4"><img src="purchase/classes/4.png" />&nbsp;IDS_CLASS_LONG_ARTY</button>
+<div style="height:5px" />
+<button.cls name="unitclass" type="radio" id="unitclass5"><img src="purchase/classes/5.png" />&nbsp;IDS_CLASS_LONG_AA</button>
+<div style="height:5px" />
+<button.cls name="unitclass" type="radio" id="unitclass7"><img src="purchase/classes/7.png" />&nbsp;IDS_CLASS_LONG_FIGHTER</button>
+<div style="height:5px" />
+<button.cls name="unitclass" type="radio" id="unitclass8"><table><tr><td><img src="purchase/classes/8.png" /></td><td>IDS_CLASS_SHORT_TAC_BOMBER_PURCHASE</td></tr></table></button>
+<div style="height:5px" />
+<button.cls name="unitclass" type="radio" id="unitclass9"><table><tr><td><img src="purchase/classes/9.png" /></td><td>IDS_CLASS_SHORT_STR_BOMBER_PURCHASE</td></tr></table></button>
+</div>
+
+<div style="height:100%%" />
+
+<div style="padding:10px; font-size:13px" id="ShowAllNationsDiv">
+<input type="checkbox" name="ShowAllNations" id="ShowAllNations" style="vertical-align:middle" />IDS_SHOW_ALL_NATIONS
+</div>
+
+</div>
+
+<div style="left:2#; top:1#; width:100%%; height:100%">
+
+<div style="height:100%%; width: 100%%; background-image:url(purchase/purchase_box2.png); background-repeat:expand stretch-middle; background-position: 30px 30px 30px 30px; padding: 20px">
+<widget.typelist type="select" id="UnitList">
+
+<!--
+<OPTION VALUE=0 name="unit"><div.btn><img.uniticon icon="" /></div><div.label>Test1</div></OPTION>
+<OPTION.red VALUE=1 name="unit"><div.btn><img.uniticon icon="" /></div><div.label>Test2</div></OPTION>
+-->
+
+</widget>
+</div>
+
+<div style="height:130px; width: 100%%; background-image:url(purchase/purchase_box2.png); background-repeat:expand stretch-middle; background-position: 20px 20px 20px 20px; margin-top:13px; padding: 20px">
+<widget.typelist type="select" id="TransportList">
+
+<!--
+<OPTION VALUE=0 name="unit"><div.btn><img.uniticon icon="" /></div><div.label>Test1</div></OPTION>
+<OPTION.red VALUE=1 name="unit"><div.btn><img.uniticon icon="" /></div><div.label>Test2</div></OPTION>
+-->
+
+</widget>
+</div>
+
+</div>
+
+<div style="left:3#; top:1#; width:320px; margin-left: 10px">
+
+<div id="UnitClassDescription" style="height:min-intrinsic; width: 280px; text-align:left; vertical-align:top; padding:20px; display:none">
+</div>
+
+<div id="UnitStats" style="background-image:url(purchase/purchase_unitinfo.png); background-repeat:expand; background-position: 273px 0px 0px 0px; display:block; height:100%%">
+
+<div id="UnitBlock" style="position:absolute; right:35px; top:0px; height:256px; width: 256px; text-align:center; vertical-align:middle">
+<span id="UnitBigIcon"></span>
+<div id="UnitSpecialAbilities" style="position:absolute; left:80px; top:250px; height:24px; width: 96px; text-align:center; vertical-align:middle">
+&nbsp;
+</div>
+</div>
+
+<div id="UnitBlock" style="position:absolute; right:45px; top:208px; height:38px; width: 242px; text-align:center; vertical-align:middle">
+<span id="UnitTypeLong" style="color:#333230; font-family: Georgia; font-size:13px; font-weight:bold"></span>
+</div>
+
+<div style="height:250px" />
+
+<div style="height:100%%; max-height: 30px" />
+
+<div style="height:min-intrinsic; width: 320px; text-align:center; vertical-align:middle; overflow:hidden">
+<table id="UnitBlock" cellspacing=-1 cellpadding=0 style="margin:auto">
+<tr>
+<td>
+<table cellspacing=-1 cellpadding=0>
+<tr.s><td.staticon><img src="stats/icon_cost.png" tooltip="IDS_STAT_COST" moreinfo="IDI_STATS_COST" /></td></tr>
+<tr.s><td.staticon><img src="stats/icon_strength.png" tooltip="IDS_STAT_MAX_STRENGTH" moreinfo="IDI_STATS_MAX_STRENGTH" /></td></tr>
+<tr.s><td.staticon><img src="stats/icon_fuel.png" tooltip="IDS_STAT_MAX_FUEL" moreinfo="IDI_STATS_MAX_FUEL" /></td></tr>
+<tr.s><td.staticon><img src="stats/icon_ammo.png" tooltip="IDS_STAT_MAX_AMMO" moreinfo="IDI_STATS_MAX_AMMO" /></td></tr>
+</table>
+</td>
+<td>
+<table style="height: 100%%" cellspacing=-1 cellpadding=0>
+<tr><td.statvalue><span id="UnitCost" /></td></tr>
+<tr><td.statvalue><span id="UnitMaxStrength" /></td></tr>
+<tr><td.statvalue><span id="UnitMaxFuel" /></td></tr>
+<tr><td.statvalue><span id="UnitMaxAmmo" /></td></tr>
+</table>
+</td>
+<td>
+<table id="Unit2Block" style="height: 100%%" cellspacing=-1 cellpadding=0>
+<tr><td.statvalue><span id="Unit2Cost" /></td></tr>
+<tr><td.statvalue><span id="Unit2MaxStrength" /></td></tr>
+<tr><td.statvalue><span id="Unit2MaxFuel" /></td></tr>
+<tr><td.statvalue><span id="Unit2MaxAmmo" /></td></tr>
+</table>
+</td>
+<td>
+<table id="TransportBlock" style="height: 100%%" cellspacing=-1 cellpadding=0>
+<tr><td.statvalue id="TransportCost" align=center></td></tr>
+<tr><td.statvalue id="TransportMaxStrength"></td></tr>
+<tr><td.statvalue id="TransportMaxFuel"></td></tr>
+<tr><td.statvalue id="TransportMaxAmmo"></td></tr>
+</table>
+</td>
+<td>
+<table cellspacing=-1 cellpadding=0>
+<tr.s><td.staticon><img src="stats/icon_moves.png" tooltip="IDS_STAT_MOVEMENT" moreinfo="IDI_STATS_MOVEMENT" /></td></tr>
+<tr.s><td.staticon><img src="stats/icon_LOS.png" tooltip="IDS_STAT_SPOTTING" moreinfo="IDI_STATS_SPOTTING" /></td></tr>
+<tr.s><td.staticon><img src="stats/icon_range.png" tooltip="IDS_STAT_RANGE" moreinfo="IDI_STATS_RANGE" /></td></tr>
+<tr.s><td.staticon><img src="stats/icon_initiative.png" tooltip="IDS_STAT_INITIATIVE" moreinfo="IDI_STATS_INITIATIVE" /></td></tr>
+</table>
+</td>
+<td>
+<table style="height: 100%%" cellspacing=-1 cellpadding=0>
+<tr><td.statvalue style="flow:h-flow"><div style="width:50%%"/><div id="UnitMovement" /><div id="UnitMovementIcon" /></td></tr>
+<tr><td.statvalue><span id="UnitSpotting" /></td></tr>
+<tr><td.statvalue><span id="UnitRange" /></td></tr>
+<tr><td.statvalue><span id="UnitInitiative" /></td></tr>
+</table>
+</td>
+<td>
+<table id="Unit2Block" style="height: 100%%" cellspacing=-1 cellpadding=0>
+<tr><td.statvalue style="flow:h-flow"><div style="width:50%%"/><div id="Unit2Movement" /><div id="Unit2MovementIcon" /></td></tr>
+<tr><td.statvalue><span id="Unit2Spotting" /></td></tr>
+<tr><td.statvalue><span id="Unit2Range" /></td></tr>
+<tr><td.statvalue><span id="Unit2Initiative" /></td></tr>
+</table>
+</td>
+<td>
+<table id="TransportBlock" style="height: 100%%" cellspacing=-1 cellpadding=0>
+<tr><td.statvalue style="flow:h-flow"><div style="width:50%%"/><div id="TransportMovement" /><div id="TransportMovementIcon" /></td></tr>
+<tr><td.statvalue id="TransportSpotting"></td></tr>
+<tr><td.statvalue id="TransportRange"></td></tr>
+<tr><td.statvalue id="TransportInitiative"></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table cellspacing=-1 cellpadding=0>
+<tr.s><td.staticon><img src="stats/icon_softatt.png" tooltip="IDS_STAT_SOFT_ATTACK" moreinfo="IDI_STATS_SOFT_ATTACK" /></td></tr>
+<tr.s><td.staticon><img src="stats/icon_hardatt.png" tooltip="IDS_STAT_HARD_ATTACK" moreinfo="IDI_STATS_HARD_ATTACK" /></td></tr>
+<tr.s><td.staticon><img src="stats/icon_airatt.png" tooltip="IDS_STAT_AIR_ATTACK" moreinfo="IDI_STATS_AIR_ATTACK" /></td></tr>
+<tr.s><td.staticon><img src="stats/icon_navatt.png" tooltip="IDS_STAT_NAVAL_ATTACK" moreinfo="IDI_STATS_NAVAL_ATTACK" /></td></tr>
+</table>
+</td>
+<td>
+<table style="height: 100%%" cellspacing=-1 cellpadding=0>
+<tr><td.statvalue><span id="UnitSoftAttack" /></td></tr>
+<tr><td.statvalue><span id="UnitHardAttack" /></td></tr>
+<tr><td.statvalue><span id="UnitAirAttack" /></td></tr>
+<tr><td.statvalue><span id="UnitNavalAttack" /></td></tr>
+</table>
+</td>
+<td>
+<table id="Unit2Block" style="height: 100%%" cellspacing=-1 cellpadding=0>
+<tr><td.statvalue><span id="Unit2SoftAttack" /></td></tr>
+<tr><td.statvalue><span id="Unit2HardAttack" /></td></tr>
+<tr><td.statvalue><span id="Unit2AirAttack" /></td></tr>
+<tr><td.statvalue><span id="Unit2NavalAttack" /></td></tr>
+</table>
+</td>
+<td>
+<table id="TransportBlock" style="height: 100%%" cellspacing=-1 cellpadding=0>
+<tr><td.statvalue id="TransportSoftAttack" align=center"></td></tr>
+<tr><td.statvalue id="TransportHardAttack"></td></tr>
+<tr><td.statvalue id="TransportAirAttack"></td></tr>
+<tr><td.statvalue id="TransportNavalAttack"></td></tr>
+</table>
+</td>
+<td>
+<table cellspacing=-1 cellpadding=0>
+<tr.s><td.staticon><img src="stats/icon_grounddef.png" tooltip="IDS_STAT_GROUND_DEFENSE" moreinfo="IDI_STATS_GROUND_DEFENSE" /></td></tr>
+<tr.s><td.staticon><img src="stats/icon_airdef.png" tooltip="IDS_STAT_AIR_DEFENSE" moreinfo="IDI_STATS_AIR_DEFENSE" /></td></tr>
+<tr.s><td.staticon><img src="stats/icon_closedef.png" tooltip="IDS_STAT_CLOSE_DEFENSE" moreinfo="IDI_STATS_CLOSE_DEFENSE" /></td></tr>
+<tr.s><td.staticon><img src="stats/icon_targettype.png" tooltip="IDS_STAT_TARGET_TYPE" moreinfo="IDI_STATS_TARGET_TYPE" /></td></tr>
+</table>
+</td>
+<td>
+<table style="height: 100%%" cellspacing=-1 cellpadding=0>
+<tr><td.statvalue><span id="UnitGroundDefense" /></td></tr>
+<tr><td.statvalue><span id="UnitAirDefense" /></td></tr>
+<tr><td.statvalue><span id="UnitCloseDefense" /></td></tr>
+<tr><td.statvalue><span id="UnitTargetType" style="font-size:13px" /></td></tr>
+</table>
+</td>
+<td>
+<table id="Unit2Block" style="height: 100%%" cellspacing=-1 cellpadding=0>
+<tr><td.statvalue><span id="Unit2GroundDefense" /></td></tr>
+<tr><td.statvalue><span id="Unit2AirDefense" /></td></tr>
+<tr><td.statvalue><span id="Unit2CloseDefense" /></td></tr>
+<tr><td.statvalue><span id="Unit2TargetType" style="font-size:13px" /></td></tr>
+</table>
+</td>
+<td>
+<table id="TransportBlock" style="height: 100%%" cellspacing=-1 cellpadding=0>
+<tr><td.statvalue id="TransportGroundDefense" align=center"></td></tr>
+<tr><td.statvalue id="TransportAirDefense"></td></tr>
+<tr><td.statvalue id="TransportCloseDefense"></td></tr>
+<tr><td.statvalue id="TransportTargetType" style="font-size:13px" ></td></tr>
+</table>
+</td>
+</tr>
+</table>
+
+<p id="UnitBlock" style="font-size:15px; font-weight: 900">
+IDS_LABEL_TOTAL_COST <span id="TotalCost" style="color:#fbd661">0</span>
+</p>
+<p id="UnitBlock" style="font-size:15px; font-weight: 900">
+<span id="RedMessage" style="color:#ff0000"></span>
+</p>
+</div>
+
+<div style="height:60px" />
+
+</div>
+
+
+
+<div style="position:absolute; right:0px; bottom:0px; height:min-intrinsic; width: 330px; text-align:center; vertical-align:middle">
+<button.pushbtn id="cmd_ok"><span id="PurchaseText">IDS_BUTTON_PURCHASE</span></button>
+<button.pushbtn id="cmd_cancel">IDS_BUTTON_CANCEL</button>
+</div>
+
+</div>
+
+</body>
+</html>

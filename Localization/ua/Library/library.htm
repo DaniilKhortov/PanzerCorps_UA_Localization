@@ -1,0 +1,303 @@
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=Windows-1251"/>
+
+<head>
+<style>
+@set my-v-scrollbar
+{
+  .prev 
+  { 
+    foreground-image:url(scrollbar/arrow01.png); 
+    foreground-position:50% 50%;
+    foreground-repeat:no-repeat; 
+  }
+  
+  .next 
+  { 
+    foreground-image:url(scrollbar/arrow02.png); 
+    foreground-position:50% 50%;
+    foreground-repeat:no-repeat; 
+  }
+  
+  :root
+  {
+  	//background:red;
+    foreground-image:url(scrollbar/measurmentnew_repeat.png); 
+    foreground-position: 28px 0px 28px 0px;
+    foreground-repeat:expand;
+  }
+  
+  .next-page, 
+  .prev-page
+  {
+  	foreground-image:none; 
+  }
+  
+  .slider 
+  { 
+    foreground-image:url(scrollbar/slider.png);
+    foreground-position: 31px 0px 32px 0px;
+    foreground-repeat:expand;
+    margin:0px;
+    padding:0px;
+    max-height: 68px;
+    min-height: 68px;
+    height: 68px;
+  }
+
+  .slider:hover,
+  .slider:active
+  { 
+    foreground-image:url(scrollbar/slider_act.png);
+  }
+  
+  .next:disabled, .slider:disabled, 
+  .prev:disabled  { height:0; border:none; foreground-image:none; }
+  
+  .base:disabled
+  {
+    background-image: none;
+    background-repeat: no-repeat;
+    width: 0;
+  }
+    
+  .prev:hover
+  { 
+    foreground-image:url(scrollbar/arrow01_hov.png); 
+  }
+  
+  .next:hover
+  { 
+    foreground-image:url(scrollbar/arrow02_hov.png); 
+  }
+  
+  .prev:active
+  { 
+    foreground-image:url(scrollbar/arrow01_act.png); 
+  }
+  
+  .next:active
+  { 
+    foreground-image:url(scrollbar/arrow02_act.png); 
+  }
+  
+  .base { width: 28px; } /* explicit declaration of its width */
+  
+}
+
+div
+{
+//margin: auto;
+//border: 1px solid red;
+vertical-scrollbar: my-v-scrollbar;
+font-size: 13px;
+}
+
+a
+{
+	color: white;
+	text-decoration: none;
+}
+
+.x
+{
+behavior: button;
+background-image: url(close_button.png);
+background-repeat: no-repeat;
+background-position: center;
+height: 50px;
+width: 154px;
+white-space: nowrap;
+font-weight: bold;
+color: #F9F5C8;
+vertical-align: middle;
+text-align:center;
+}
+
+.x:hover
+{
+background-image: url(close_button_highlighted.png);
+color: #FFFFFF;
+}
+
+.l
+{
+text-align: left;
+}
+
+.c
+{
+text-align: center;
+}
+
+.now
+{
+background-image:url(NoW.png);
+background-repeat:repeat;
+//border:1px solid red;
+}
+
+.noe
+{
+background-image:url(NoE.png);
+background-repeat:repeat;
+}
+
+h1
+{
+font-size: 15px;
+color:#5D1F18;
+//font-style: italic;
+}
+</style>
+</head>
+
+<body style="margin:0px; background-image:url(background.png); background-repeat: stretch">
+
+<div style="height:148px; width:100%%; background-image:url(panzer_library_headwithwirelog.png); background-repeat:no-repeat; background-position:center center">
+
+</div>
+
+<div style="height:100%%; width:1000px; margin:auto;background-image:url(panzer_library_base_text.png); background-repeat:expand; background-position:769px 0px 0px 0px">
+
+<div style="flow:grid; height:100%%; width:100%%">
+
+<div style="left:1#; top:1#; width:200px; height:100%%; overflow:hidden; padding: 33px 20px 0px 47px">
+
+<div style="width:193px; height:43px; text-align:center; vertical-align:middle; font-weight: bold; font-size: 20px">
+Библиотека
+</div>
+
+<div style="width:100%%; height:100%%; line-height: 125%; overflow-x:hidden; overflow-y:auto; margin-top: 10px; background-image:url('list_bg.png'); background-repeat:repeat-y; color:#FFFFF6; background-attachment: scroll;">
+<div style="font-style:italic; font-weight:bold; color:#FBECBD;">Справка по игре<br/></div>
+<a href="unitclass.htm">&bull; КЛАССЫ ЮНИТОВ</a><br/>
+<a href="terrain.htm">&bull; ТИПЫ МЕСТНОСТИ</a><br/>
+<a href="movement.htm">&bull; ПЕРЕДВИЖЕНИЕ</a><br/>
+<a href="campaign.htm">&bull; КАМПАНИЯ</a><br/>
+<a href="campaign_ak.htm">&bull; КАМПАНИЯ АК</a><br/>
+<a href="campaign_ac.htm">&bull; КАМПАНИЯ AC</a><br/>
+<a href="campaign_sc.htm">&bull; КАМПАНИЯ СК</a><br/>
+<a href="campaign_gc.htm">&bull; ГРАНД КАМПАНИЯ</a><br/>
+<a href="campaign_sl.htm">&bull; МОРСКОЙ ЛЕВ</a><br/>
+<a href="USCorps.htm">&bull; КАМПАНИЯ США</a><br/>
+<a href="hotkeys.htm">&bull; ГОРЯЧИЕ КЛАВИШИ</a><br/>
+<div style="font-style:italic; font-weight:bold; color:#FBECBD;">Танки<br/></div>
+<a href="pzkw_ii.htm">&bull; ПАНЦЕР II</a><br/>
+<a href="pzkw_iii.htm">&bull; ПАНЦЕР III</a><br/>
+<a href="pzkw_iv.htm">&bull; ПАНЦЕР IV</a><br/>
+<a href="panther.htm">&bull; ПАНТЕРА</a><br/>
+<a href="tiger_i.htm">&bull; ТИГР I</a><br/>
+<a href="tiger_ii.htm">&bull; ТИГР II</a><br/>
+<a href="matilda.htm">&bull; МАТИЛЬДА</a><br/>
+<a href="crusader.htm">&bull; КРУСЕЙДЕР</a><br/>
+<a href="churchill.htm">&bull; ЧЕРЧИЛЛЬ</a><br/>
+<a href="cromwell.htm">&bull; КРОМВЕЛЬ</a><br/>
+<a href="m24.htm">&bull; ЧАФФИ</a><br/>
+<a href="sherman.htm">&bull; ШЕРМАН</a><br/>
+<a href="firefly.htm">&bull; ШЕРМАН ФАЙРФЛАЙ</a><br/>
+<a href="crab.htm">&bull; ШЕРМАН КРАБ</a><br/>
+<a href="stuart.htm">&bull; M3 СТЮАРТ</a><br/>
+<a href="pershing.htm">&bull; M26 ПЕРШИНГ</a><br/>
+<a href="m10.htm">&bull; M10 ВОЛВЕРИН</a><br/>
+<a href="hellcat.htm">&bull; M18 ХЕЛЛКЕТ</a><br/>
+<a href="kv_i.htm">&bull; КВ-1</a><br/>
+<a href="t_34.htm">&bull; T-34</a><br/>
+<a href="IS.htm">&bull; ИС-2</a><br/>
+<div style="font-style:italic; font-weight:bold; color:#FBECBD;">Истребители<br/></div>
+<a href="bf109.htm">&bull; BF-109</a><br/>
+<a href="fw190.htm">&bull; FW-190</a><br/>
+<a href="me163.htm">&bull; ME-163 KOMETА</a><br/>
+<a href="me262.htm">&bull; ME-262</a><br/>
+<a href="hurricane.htm">&bull; ХАРРИКЕЙН</a><br/>
+<a href="spitfire.htm">&bull; СПИТФАЙР</a><br/>
+<a href="tempest.htm">&bull; ТЕМПЕСТ</a><br/>
+<a href="meteor.htm">&bull; МЕТЕОР</a><br/>
+<a href="p40.htm">&bull; P-40</a><br/>
+<a href="p38.htm">&bull; P-38 ЛАЙТИНГ</a><br/>
+<a href="p47.htm">&bull; P-47 ТАНДЕРБОЛТ</a><br/>
+<a href="p51.htm">&bull; P-51 МУСТАНГ</a><br/>
+<a href="i16.htm">&bull; И-16</a><br/>
+<a href="mig3.htm">&bull; МИГ-3</a><br/>
+<a href="yak9.htm">&bull; ЯК-9</a><br/>
+<a href="la5.htm">&bull; ЛА-5</a><br/>
+<a href="d520.htm">&bull; D.520</a><br/>
+<a href="ms406.htm">&bull; MS.406</a><br/>
+<a href="g55.htm">&bull; G.55</a><br/>
+<a href="mc202.htm">&bull; MC.202</a><br/>
+<div style="font-style:italic; font-weight:bold; color:#FBECBD;">Бомбардировщики<br/></div>
+<a href="ju87.htm">&bull; Ю-87 ШТУКА</a><br/>
+<a href="ju88.htm">&bull; Ю-88</a><br/>
+<a href="blenheim.htm">&bull; БЛЕНХЕЙМ</a><br/>
+<a href="mosquito.htm">&bull; МОСКИТО</a><br/>
+<a href="typhoon.htm">&bull; ТАЙФУН</a><br/>
+<a href="b17.htm">&bull; Б-17</a><br/>
+<a href="b29.htm">&bull; Б-29</a><br/>
+<a href="b25.htm">&bull; Б-25</a><br/>
+<a href="il2.htm">&bull; ИЛ-2</a><br/>
+<div style="font-style:italic; font-weight:bold; color:#FBECBD;">Прочая техника<br/></div>
+<a href="m3.htm">&bull; M3 GMC</a><br/>
+<a href="uc.htm">&bull; ТРАНСПОРТЕР БРЕН</a><br/>
+<a href="willys.htm">&bull; ДЖИП ВИЛЛИС</a><br/>
+<a href="m8.htm">&bull; M8 ГРЕЙХАУНД</a><br/>
+<a href="6pdr.htm">&bull; 6-фунт. ПТ</a><br/>
+<a href="17pdr.htm">&bull; 17-фунт. ПТ</a><br/>
+<a href="57mm.htm">&bull; 57мм ПТ</a><br/>
+<a href="105mm.htm">&bull; 105мм ГАУБИЦА</a><br/>
+<a href="155mm.htm">&bull; 155мм ОРУДИЕ</a><br/>
+<a href="marder.htm">&bull; МАРДЕР</a><br/>
+<a href="brumbar.htm">&bull; БРУММБЕР</a><br/>
+<a href="hetzer.htm">&bull; ХЕТЦЕР</a><br/>
+<a href="jagdpanzer_iv.htm">&bull; JAGDPANZER IV</a><br/>
+<a href="stug_iiig.htm">&bull; STUG IIIG</a><br/>
+<a href="stug_iv.htm">&bull; STUG IV</a><br/>
+<a href="sdkfz251.htm">&bull; SDKFZ 251/1</a><br/>
+<a href="flak37.htm">&bull; FLAK 37</a><br/>
+<a href="v1.htm">&bull; ФАУ-1</a><br/>
+<a href="isu122.htm">&bull; ИСУ-122</a><br/>
+<a href="isu152.htm">&bull; ИСУ-152</a><br/>
+
+
+
+<div style="font-style:italic; font-weight:bold; color:#FBECBD;">РАЗНОЕ<br/></div>
+<a href="credits.htm">&bull; РАЗРАБОТЧИКИ</a>
+</div>
+
+<div style="height:min-intrinsic; vertical-align:bottom; padding:0px 0px 10px 20px">
+<div.x id="cmd_cancel">ЗАКРЫТЬ</div>
+</div>
+
+</div>
+
+<div id="PageText" style="left:2#; top:1#; width:100%%; height:100%%; overflow-y:auto; overflow-x: hidden; padding: 80px 90px 0px 30px">
+
+<table style="width:100%%;">
+<tr>
+	<td><div style="font-family:georgia; font-size:36px; color:#5D1F18; font-style: italic">Добро пожаловать в библиотеку Panzer Corps!</div></td>
+	<td><img src="dots_small.png"></td>
+</tr>
+</table>
+<img src="dots.png">
+
+
+
+<p>Библиотека поделена на две основные секции.</p>
+
+<ul>
+<li><b>Справка по игре</b> содержит полезную информацию о подразделениях, типах местности, горячих клавишах и т.п. Она не заменяет руководство по игре, но дополняет его. Руководство по игре (в формате pdf) доступно через меню "Пуск" или непосредственно в папке с игрой.</li>
+<li>Секция <b>Военная техника</b> содержит исторические сведения о наиболее известных танках, самолётах и прочей технике Второй мировой войны, с которыми вы столкнетесь по ходу игры. Кроме того, каждая статья дополнена подробной схемой танка, о котором идет речь, в высоком разрешении. Мы выражаем благодарность издательству Оспрей Паблишинг (www.ospreypublishing.com) за любезное разрешение использовать эти изображения в игре.</li>
+</ul>
+
+<p>Используйте список слева, чтобы открыть интересующую вас тему.</p>
+
+<br />
+<br />
+<br />
+
+</div>
+
+</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+<head>
+<style>
+body
+{
+    width: 100%%;
+    height: 100%%;
+    margin: 0px;
+    overflow: hidden;
+    background-image: url(startscreen/menu_wide_bg.jpg);
+    background-position: 50% 0%;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-color: black;
+}
+
+div
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+img
+{
+    visibility: hidden;
+}
+
+.sep
+{
+	foreground-repeat: stretch keep-ratio;
+	foreground-position: center center;
+	foreground-image: url(startscreen/menu_wide_sep.png)
+}
+
+.btn
+{
+	behavior: button;
+	foreground-repeat: stretch keep-ratio;
+	foreground-position: center center;
+}
+
+.btn[not-active]
+{
+	behavior: none;
+}
+
+.lang
+{
+behavior: radio;
+width: 26px;
+height: 20px;
+foreground-repeat:no-repeat;
+foreground-position: center center;
+background-image: none;
+margin: 0px;
+padding: 0px;
+}
+
+
+.btn#NewGame { foreground-image: url(startscreen/menu_wide_01.png); }
+.btn#NewGame:hover { foreground-image: url(startscreen/menu_wide_01_hov.png); }
+.btn#NewGame:active { foreground-image: url(startscreen/menu_wide_01_pres.png); }
+
+.btn#LoadGame { foreground-image: url(startscreen/menu_wide_02.png); }
+.btn#LoadGame:hover { foreground-image: url(startscreen/menu_wide_02_hov.png); }
+.btn#LoadGame:active { foreground-image: url(startscreen/menu_wide_02_pres.png); }
+
+.btn#Multiplayer { foreground-image: url(startscreen/menu_wide_03.png); }
+.btn#Multiplayer:hover { foreground-image: url(startscreen/menu_wide_03_hov.png); }
+.btn#Multiplayer:active { foreground-image: url(startscreen/menu_wide_03_pres.png); }
+
+.btn#Dossier { foreground-image: url(startscreen/menu_wide_04.png); }
+.btn#Dossier:hover { foreground-image: url(startscreen/menu_wide_04_hov.png); }
+.btn#Dossier:active { foreground-image: url(startscreen/menu_wide_04_pres.png); }
+
+.btn#Library { foreground-image: url(startscreen/menu_wide_05.png); }
+.btn#Library:hover { foreground-image: url(startscreen/menu_wide_05_hov.png); }
+.btn#Library:active { foreground-image: url(startscreen/menu_wide_05_pres.png); }
+
+.btn#Exit { foreground-image: url(startscreen/menu_wide_06.png); }
+.btn#Exit:hover { foreground-image: url(startscreen/menu_wide_06_hov.png); }
+.btn#Exit:active { foreground-image: url(startscreen/menu_wide_06_pres.png); }
+
+.lang#en { foreground-image: url(startscreen/lang_eng_normal.png); }
+.lang#en:checked { foreground-image: url(startscreen/lang_eng_select.png); }
+.lang#de { foreground-image: url(startscreen/lang_ger_normal.png); }
+.lang#de:checked { foreground-image: url(startscreen/lang_ger_select.png); }
+.lang#fr { foreground-image: url(startscreen/lang_fre_normal.png); }
+.lang#fr:checked { foreground-image: url(startscreen/lang_fre_select.png); }
+.lang#ru { foreground-image: url(startscreen/lang_rus_normal.png); }
+.lang#ru:checked { foreground-image: url(startscreen/lang_rus_select.png); }
+.lang#ua { foreground-image: url(startscreen/lang_ua_normal.png); }
+.lang#ua:checked { foreground-image: url(startscreen/lang_ua_select.png); }
+
+a
+{
+	text-decoration: none;
+	color: #d8c78e;
+}
+
+a:hover
+{
+	color: #fff5d0;
+}
+
+a:active
+{
+	color: #ad1e22;
+}
+
+</style>
+</head>
+
+<body id="Background">
+
+<div id="GoldSymbol" style="position:absolute; right:0px; top: 0px; width:433px; height:393px; background-image: url(startscreen/gold-waxseal.png); background-position: 100% 0%; background-size: auto 100%; background-repeat: no-repeat; display: none"></div>
+
+<div style="height:96%%" />
+
+<div id="MenuControls" style="flow:grid; width:70%; height:width(11%); margin-left:50%%">
+<div style="left:1#; top:1#; bottom:1#; width:50%%; height:100%"></div>
+<div.btn id="NewGame" style="left:2#; top:1#; bottom:1#; width:14%; height:100%"></div>
+<div.sep style="left:3#; top:1#; bottom:1#; width:1%; height:100%"></div>
+<div.btn id="LoadGame" style="left:4#; top:1#; bottom:1#; width:25%; height:100%"></div>
+<div.sep style="left:5#; top:1#; bottom:1#; width:1%; height:100%"></div>
+<div.btn id="Multiplayer" style="left:6#; top:1#; bottom:1#; width:19%; height:100%"></div>
+<div.sep style="left:7#; top:1#; bottom:1#; width:1%; height:100%"></div>
+<!--
+<div.btn id="Dossier" style="left:8#; top:1#; bottom:1#; width:13%; height:100%"></div>
+<div.sep style="left:9#; top:1#; bottom:1#; width:1%; height:100%"></div>
+-->
+<div.btn id="Library" style="left:10#; top:1#; bottom:1#; width:15%; height:100%"></div>
+<div.sep style="left:11#; top:1#; bottom:1#; width:1%; height:100%"></div>
+<div.btn id="Exit" style="left:12#; top:1#; bottom:1#; width:8%; height:100%"></div>
+</div>
+
+<div style="height:4%%" />
+
+<div style="text-align:center; color:#d8c78e; font-size:9px; font-family:Arial Narrow">
+<div>IDS_COPYRIGHT</div>
+<div><span id="Version">0.0</span> - <a href="credits.htm">IDS_LINK_CREDITS</a></div>
+<div style="text-align:center">
+<button.lang type="radio" name="Lang" id="en" checked />&nbsp;<button.lang type="radio" name="Lang" id="de" />&nbsp;<button.lang type="radio" name="Lang" id="fr" />&nbsp;<button.lang type="radio" name="Lang" id="ru" />&nbsp;<button.lang type="radio" name="Lang" id="ua" />
+</div>
+</div>
+
+</body>
+</html>
